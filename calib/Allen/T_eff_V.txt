@@ -1,0 +1,30 @@
+# Spectral type characteristics
+# from Tab. 15.7 of Allen's Astrophysical Quantities, 4th Ed.
+#
+# Main sequence stars (V)
+#
+# SpType T_eff [K]
+#
+O5	42000
+O9	34000
+B0	30000
+B2	20900
+B5	15200
+B8	11400
+A0	9790
+A2	9000
+A5	8180
+F0	7300
+F2	7000
+F5	6650
+F8	6250
+G0	5940
+G2	5790
+G5	5560
+G8	5310
+K0	5150
+K2	4830
+K5	4410
+M0	3840
+M2	3520
+M5	3170

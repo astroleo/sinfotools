@@ -1,0 +1,26 @@
+##
+## copy of this lives in get_NIR_parameters.py in same directory
+##
+## parameters for SINFONI data reduction to be read by get_sinfo_drs_parameters
+##
+## limits of H band
+H_lower   1.509
+H_upper   1.799
+K_lower   1.974
+K_upper   2.384
+##
+## H/K band zero points in W/(m^2 um)
+H0   1.15d-9
+K0   4.14d-10
+##
+## 2MASS definitions
+## from http://www.ipac.caltech.edu/2mass/releases/allsky/faq.html#jansky
+## Units here are converted to W/(m^2 um)
+## 
+twomass_k_lam   2.159
+twomass_k_dlam   0.262
+twomass_k0   4.283d-10
+##
+twomass_h_lam   1.662
+twomass_h_dlam   0.251
+twomass_h0   1.133d-9

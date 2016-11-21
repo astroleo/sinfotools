@@ -1,0 +1,3 @@
+/Users/astro/Dropbox/SINFO-Tools/sinfo_reduce.sh: line 340: 84722 Segmentation fault: 11  spredCreateBadpix.py -f badpix.dark.long.ini
+
+solution: copy badpix directory from another night
