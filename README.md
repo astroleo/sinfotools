@@ -3,7 +3,7 @@ This set of scripts allows you to reduce large quantities of VLT/SINFONI data se
 
 # Dependencies
 The scripts require access to a couple of external routines, i.e.
-* the OBSDB database of observations (see <http://github.com/astroleo/esodb>)
+* the OBSDB database of observations (see http://github.com/astroleo/esodb)
 * the MPE (Garching) data reduction package `spred` (this is only available by request)
 * lac3d for cosmic ray suppression, originally by Pieter G. van Dokkum, adapted for 3D data cubes by Ric Davies, MPE (http://www.mpe.mpg.de/~davies/downloads/dir.php)
 * skysub for skyline suppression, by Ric Davies, MPE (http://www.mpe.mpg.de/~davies/downloads/dir.php)
@@ -21,5 +21,7 @@ Prior to usage, a couple of environment variables need to be set, i.e.
 
 Finally, you may want to add $SINFOTOOLS to your $PATH and make the shell scripts executable.
 
+For further instructions, see the inline comments in the main script `sinfo_reduce.sh`.
+
 # Feedback
-Please direct your comments, questions and other feedback to Leonard Burtscher <burtscher@strw.leidenuniv.nl>.
+Please direct your comments, questions and other feedback to Leonard Burtscher burtscher@strw.leidenuniv.nl.
