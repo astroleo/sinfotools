@@ -5,9 +5,9 @@ This set of scripts allows you to reduce large quantities of VLT/SINFONI data se
 The scripts require access to a couple of external routines, i.e.
 * the OBSDB database of observations (see http://github.com/astroleo/esodb)
 * the MPE (Garching) data reduction package `spred` (this is only available by request)
-* lac3d for cosmic ray suppression, originally by Pieter G. van Dokkum, adapted for 3D data cubes by Ric Davies, MPE 
-* skysub for skyline suppression, by Ric Davies, MPE 
-* optionally: starfit, e.g. for determining stellar kinematics and disentangling the stellar and non-stellar flux in AGNs. This is also by Ric Davies, MPE 
+* lac3d for cosmic ray suppression, originally by Pieter G. van Dokkum, adapted for 3D data cubes by Ric Davies, MPE (http://www.mpe.mpg.de/~davies/downloads/dir.php) 
+* skysub for skyline suppression, by Ric Davies, MPE (http://www.mpe.mpg.de/~davies/downloads/dir.php)
+* optionally: starfit, e.g. for determining stellar kinematics and disentangling the stellar and non-stellar flux in AGNs. This is also by Ric Davies, MPE (http://www.mpe.mpg.de/~davies/downloads/dir.php)
 
 # Installation
 Prior to usage, a couple of environment variables need to be set, i.e.
