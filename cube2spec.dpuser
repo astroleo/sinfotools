@@ -1,0 +1,41 @@
+//
+// cube2spec DPUSER script (for DPUSER see http://www.mpe.mpg.de/~ott/dpuser/)
+//
+// compile in dpuser and execute. Commands:
+// @/Users/astro/Dropbox/SINFO-Tools/cube2spec.dpuser
+// cube2spec "cube_*.fits"
+//
+procedure cube2spec, filestring {
+	files = findfile(filestring)
+	print files
+	
+	for(i=1;i<=nelements(files);i++) {
+	  
+	  cube = readfits(files[i])
+	  
+	  sm = boxcar(cube,5,/median)
+	  
+	//  sm = cube
+	  
+	  n1=naxis1(sm)
+	  n2=naxis2(sm)
+	  
+	  print n1
+	  print n2
+	  
+	  gf = gauss2dsimplefit(cubeavg(sm),n1/2,n2/2,15) 
+	  
+	  print gf,/values
+	  
+	  px = round(gf[3])
+	  py = round(gf[4])
+	  
+	  offset=-7
+	  
+	  spec = 3dspec(sm, px+offset, py+offset, 3)
+	  
+	  fn = "spectrum_" + files[i]
+	  
+	  writefits fn, spec
+	}
+}
