@@ -801,8 +801,10 @@ if [ $do_atmocalib -eq 1 ]; then
 		sinfolog "No reduced standard star cubes found."
 		exit
 	fi
-	sinfolog "Extracting standard star spectra"
-	idl -e c2a
+	##
+	## Commented out for the moment -- for manual spectrum modification (removal of Brg emission line) 2017-04-12
+	#sinfolog "Extracting standard star spectra"
+	#idl -e c2a
 	sinfolog "Starting atmospheric calibration"
 	cd $SINFOREDDIR/$night/data
 
