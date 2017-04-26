@@ -1,0 +1,56 @@
+/*
+script downloaded from Stefan Gillessen's webpage (Dec 2012)
+
+removes detector biases in raw data
+
+2013-01-16   creates empty file "done" when done (to be tested in shell wrapper script)
+*/
+oldfiles=findfile("*.fits_")
+if(nelements(oldfiles) > 0) {
+  print "Discovered old files - you probably called this script already" 
+} else {
+
+  files=findfile("*.fits")
+
+  for(k=1;k<=nelements(files);k=k+1) {
+    print k
+    filename=files[k]
+    rawname=filename + "_"
+    rawimage=readfits(filename)
+    command="mv " + filename + " " + rawname
+    exec command
+    ncolumns=naxis1(rawimage)
+    nrows=naxis2(rawimage)
+    stack=floatarray(8)
+    medi=fits(2048)
+    mea=fits(2048)
+    for(i=1; i<=ncolumns; i=i+1) {
+      for (j=1; j<=4; j=j+1) {
+        stack[j]=rawimage[i,j]
+      }
+      for (j=2045;j<=2048;j=j+1) {
+        stack[j-2040]=rawimage[i,j]
+      }
+      medi[i]=median(stack)
+
+      rawimage[i,1:2048] -=  medi[i]
+  
+    } 
+    for(i=1;i<=nrows;i++) {
+      for (j=1; j<=4; j=j+1) {
+        stack[j]=rawimage[j,i]
+      }
+      for (j=2045;j<=2048;j=j+1) {
+        stack[j-2040]=rawimage[j,i]
+      }
+      medi[i]=median(stack)
+      mea[i]=avg(stack)
+    
+      rawimage[1:2048,i] +=  mea[i]
+      rawimage[1:2048,i] -=  medi[i]
+
+    }
+    writefits filename, rawimage
+  }
+}
+exit
